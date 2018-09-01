@@ -1,0 +1,29 @@
+{
+  "name": "projetoMaria-frontend-3fase",
+  "version": "1.0.0",
+  "description": "Projeto Integrador SENAI em parceria com a Intelbras, desenvolvido entre as turmas da 1ª à 5ª fase do Curso Superior de Análise e Desenvolvimento de Sistemas.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasDomaradzki/projetoMaria-frontend-3fase.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucasDomaradzki/projetoMaria-frontend-3fase/issues"
+  },
+  "homepage": "https://github.com/lucasDomaradzki/projetoMaria-frontend-3fase#readme",
+  "devDependencies": {
+    "typescript": "3.0.3"
+  },
+  "dependencies": {
+    "@angular/cli": "6.1.5",
+    "express": "4.16.3",
+    "mongodb": "3.1.4",
+    "node": "8.11.4"
+  }
+}
