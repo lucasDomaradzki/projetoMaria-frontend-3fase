@@ -12,11 +12,13 @@
 
 ### Instalação do projeto:
 
-Esse projeto foi desenvolvido com as tecnologias do framework MEAN:
-M - MongoDB
-E - Express Js
-A - Angular
-N - Nodejs
+Esse projeto foi desenvolvido com as tecnologias do framework MEAN:</br>
+M - MongoDB</br>
+E - Express Js</br>
+A - Angular</br>
+N - Nodejs</br>
+
+Também utilizamos a IDE/Editor VsCode.
 
 Primeiro baixe o npm em sua máquina:
 
