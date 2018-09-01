@@ -18,7 +18,7 @@ E - Express Js</br>
 A - Angular</br>
 N - Nodejs</br>
 
-Também utilizamos a IDE/Editor VsCode.
+Também utilizamos a IDE/Editor VsCode. [Baixe aqui:](https://code.visualstudio.com/Download) https://code.visualstudio.com/Download
 
 Primeiro baixe o npm em sua máquina:
 
