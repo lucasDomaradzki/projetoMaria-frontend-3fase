@@ -9,7 +9,9 @@
 <h2>
   <img align="left" src="https://cardinalsblog.adw.org/wp-content/uploads/sites/3/2013/05/mothers-day-blog.jpg" width="35%">
   Projeto Integrador SENAI em parceria com a Intelbras, desenvolvido entre as turmas da 1ª à 5ª fase do Curso Superior de Análise e Desenvolvimento de Sistemas.
-</h2></br>
+</h2>
+</br>
+</br>
 
 ### Descrição do projeto: 
 ** TO DO **
