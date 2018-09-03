@@ -4,7 +4,7 @@
   "description": "Projeto Integrador SENAI em parceria com a Intelbras, desenvolvido entre as turmas da 1ª à 5ª fase do Curso Superior de Análise e Desenvolvimento de Sistemas.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "preinstall": "scripts/preinstall.sh"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/lucasDomaradzki/projetoMaria-frontend-3fase#readme",
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-shell": "^0.6.5",
     "typescript": "3.0.3"
   },
   "dependencies": {
