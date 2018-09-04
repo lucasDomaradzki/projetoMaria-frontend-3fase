@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 sudo rm -rf ./config/workspace.json
 #Check if the workspace.json is defined, if not it creates it
 if [[ ! -e "config/workspace.json" ]];then
