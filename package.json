@@ -4,7 +4,6 @@
   "description": "Projeto Integrador SENAI em parceria com a Intelbras, desenvolvido entre as turmas da 1ª à 5ª fase do Curso Superior de Análise e Desenvolvimento de Sistemas.",
   "main": "index.js",
   "scripts": {
-    "preinstall": "scripts/preinstall.sh"
   },
   "repository": {
     "type": "git",
