@@ -68,7 +68,7 @@ Esse projeto foi desenvolvido com as tecnologias do framework **MEAN**:</br>
 - Pelo [-> localhost:3000 <-](http://localhost:3000)
 
 > Para manipular as requisições HTTP, utilize o Postman [-> aqui <-](https://www.getpostman.com/apps)
-</br>
+
 > Ou também poderá utilizar a extensão do Chrome [ -> aqui <- ](https://chrome.google.com/webstore/detail/restlet-client-rest-api-t/aejoelaoggembcahagimdiliamlcdmfm)
 
 **Para contribuir com o projeto, siga as instruções abaixo:**
