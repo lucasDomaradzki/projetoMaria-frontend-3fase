@@ -1,7 +1,6 @@
 package-lock.json
 node_modules
 user.json
-src/
 dist/
 scripts/
 gulpfile.js
