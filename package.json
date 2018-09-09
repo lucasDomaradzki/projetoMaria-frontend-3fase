@@ -2,8 +2,11 @@
   "name": "projetoMaria-frontend-3fase",
   "version": "1.0.0",
   "description": "Projeto Integrador SENAI em parceria com a Intelbras, desenvolvido entre as turmas da 1ª à 5ª fase do Curso Superior de Análise e Desenvolvimento de Sistemas.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "watch-ts": "tsc -w",
+    "watch-node": "nodemon dist/app.js",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript, Node\" -c \"yello.bold, cyan.bold\" \"npm run watch-ts\" \"npm run watch-node\""
   },
   "repository": {
     "type": "git",
@@ -17,14 +20,22 @@
   },
   "homepage": "https://github.com/lucasDomaradzki/projetoMaria-frontend-3fase#readme",
   "devDependencies": {
+    "@types/mongoose": "4.7.32",
+    "@types/restify": "5.0.6",
+    "@types/restify-errors": "4.3.2",
+    "colors": "^1.3.2",
+    "concurrently": "^4.0.1",
+    "fs": "0.0.1-security",
     "gulp": "^3.9.1",
     "gulp-shell": "^0.6.5",
+    "inquirer": "^6.2.0",
+    "nodemon": "^1.18.4",
     "typescript": "3.0.3"
   },
   "dependencies": {
-    "@angular/cli": "6.1.5",
-    "express": "4.16.3",
-    "mongodb": "3.1.4",
-    "node": "8.11.4"
+    "mongoose": "4.13.9",
+    "node": "8.11.4",
+    "restify": "6.3.4",
+    "restify-errors": "5.0.0"
   }
 }
