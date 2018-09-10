@@ -29,8 +29,8 @@ Também utilizamos a IDE/Editor VsCode. [->Baixe aqui<-](https://code.visualstud
 
 Esse projeto foi desenvolvido com as tecnologias do framework **MEAN**:</br>
 **M - MongoDB**</br>
-**E - Express Js**</br>
-~~**A - Angular**~~</br>
+~~**E - Express Js**~~</br>
+**A - Angular**</br>
 **N - Nodejs**</br>
 **R - Restify**</br>
 
