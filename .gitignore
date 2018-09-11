@@ -1,3 +1,6 @@
 package-lock.json
 node_modules
-workspace.json
+user.json
+dist/
+scripts/
+gulpfile.js
