@@ -70,6 +70,9 @@ Esse projeto foi desenvolvido com as tecnologias do framework **MEAN**:</br>
 > Com o mongoDB rodando e com os arquivos .js na pasta dist/ agora você poderá rodar o comando abaixo para iniciar a aplicação:
 - **npm run watch**
 
+> Para rodar a aplicação em modo debug rode o comando abaixo: [ -> Mais informações aqui <-](https://github.com/Microsoft/vscode-recipes/tree/master/nodemon)
+- **npm run watch-debug**
+
 **O comando acima vai manter a aplicação "escutando" cada alteração feita no código**
 
 ---
