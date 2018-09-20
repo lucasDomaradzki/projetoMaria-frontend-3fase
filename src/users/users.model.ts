@@ -10,7 +10,7 @@ mongoose.connect(environment.db.url, { useNewUrlParser: true }, (err: any) => {
 })
 
 // Use this to debug mongoose
-// mongoose.set("debug", true);
+mongoose.set("debug", true);
 
 export interface User extends mongoose.Document {
   name: string,

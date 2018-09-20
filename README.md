@@ -44,6 +44,14 @@ Esse projeto foi desenvolvido com as tecnologias do framework **MEAN**:</br>
 - **npm -v**
 - **node -v**
 
+> Rode os comandos abaixo para instalar globalmente:
+
+- **npm install -g typescript@2.6.2 -E**
+
+- **npm install -g nodemon@1.18.4 -E**
+
+- **npm install -g concurrently@4.0.1 -E**
+
 > Se a instalação estiver correta entre na pasta do projeto que clonou e rode o comando abaixo para instalar as dependências:
 - **npm i**
 
