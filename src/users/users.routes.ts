@@ -29,6 +29,7 @@ export let addUser = (req: Request, res: Response) => {
   var user = new User(req.body);
   user.save((err: any) => {
     if (err) {
+      res.status(400);
       res.send(err);
     } else {
       res.send(user);
