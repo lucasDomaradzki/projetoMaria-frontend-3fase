@@ -95,3 +95,22 @@ A modificação ou implementação do código poderá ser feita via uma única b
 - git status 
 > Adicione as modificações com **git add** e comite com o **git commit** e depois dê o push:
 - git push origin < **nome-branch** >
+
+
+Caso não consiga dar o push da sua branch:
+
+No windows:
+> ir no iniciar e entrar no 'Gerenciador de Credenciais'
+> no 'Credenciais do Windows', clicar nas credenciais do git e removê-las
+> no 'Credenciais da Web', ver se há alguma credencial de git e removê-la
+
+No browser:
+> entre no git do projeto e copie o endereço https dele.
+
+No CMD:
+> entre na pasta do projeto
+> digite: git remote set-url origin 
+	> cole o endereço E coloque o seu login seguido de @ após o https://
+	será pedido seu login e senha desse git
+
+Pronto, podes dar o git push
