@@ -1,0 +1,4 @@
+2018-09-27 20:16:38.478 WARN [br.senai.sc.edu.projetomaria.resource.ResourceManager (32)] - java.util.MissingResourceException: Can't find resource for bundle java.util.PropertyResourceBundle, key projeto.nome
+2018-09-27 20:16:38.484 INFO [br.senai.sc.edu.projetomaria.ProjetoMaria (44)] - === !projeto.nome! | v0.0.0 ===
+2018-09-27 21:05:40.051 WARN [br.senai.sc.edu.projetomaria.resource.ResourceManager (32)] - java.util.MissingResourceException: Can't find resource for bundle java.util.PropertyResourceBundle, key projeto.nome
+2018-09-27 21:05:40.056 INFO [br.senai.sc.edu.projetomaria.ProjetoMaria (44)] - === !projeto.nome! | v0.0.0 ===
