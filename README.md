@@ -17,7 +17,7 @@
 #### [ # Trello ](https://trello.com/b/TcyF5XC3/3-fase)
 #### [ # Telegram ](https://t.me/joinchat/G-7HHFBtas9geUzThI5TVQ)
 #### [ # Projeto Maria Java ](https://github.com/senaisc-florianopolis/projeto-maria)
-#### [ # Projeto Maria Angular ](https://github.com/gabrielsegalla/Projeto-Base)
+#### [ # Projeto Maria Angular ](https://github.com/senaisc-florianopolis/projeto-maria-2-frontend)
 #### [ # Google Drive ](https://drive.google.com/drive/folders/1D-q5BeU-gfoT5DuxaNYGkkIB1ICzTSbi?usp=sharing)
 
 ### Descrição do projeto: 
