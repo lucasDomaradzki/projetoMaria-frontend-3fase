@@ -4,7 +4,7 @@
 ![ExpressJs](https://img.shields.io/badge/ExpressJs-4.16.3-green.svg)
 ![NodeJs](https://img.shields.io/badge/NodeJs-8.11.4-green.svg)
 
-# Projeto Maria front-end 3ª fase
+# Projeto Maria back-end 3ª fase
 
 <h2>
   <img align="left" src="https://cardinalsblog.adw.org/wp-content/uploads/sites/3/2013/05/mothers-day-blog.jpg" width="35%">
