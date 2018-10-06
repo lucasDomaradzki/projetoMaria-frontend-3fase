@@ -3,7 +3,6 @@ import { Request, Response } from "express";
 
 // get one user
 export let getUser = (req: Request, res: Response) => {
-  // var user = User.findById
   var user = User.findById({ _id: req.params.id }, (err: any, user: any) => {
     if (err) {
       res.send(err);
