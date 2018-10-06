@@ -114,3 +114,14 @@ No CMD:
 	será pedido seu login e senha desse git
 
 Pronto, podes dar o git push
+
+**Atualizações**
+
+06-10-2018
+
+- O projeto já está integrado com os códigos do time de Wrapper então já é possível fazer a chamada do Java e executar a importação de produtos, família, por exemplo. Para executar é preciso ter além desse projeto rodando conforme as intruções iniciais do repositório acima o Mysql Workbench e o Xampp instalado, bem como o banco de dados montado conforme o padrão do projeto do semestre passado.
+
+- Já está implementado o endpoint para receber o arquivo csv do front-end com o endpoint /api/upload, faltando apenas a integração com o front-end.
+É possível realizar teste local com o Postman por exemplo. Para realizar rode o projeto conforme instruções iniciais do repositório acima e no Postman selecione a opção de método post e preencher as demais informações conforme a imagem abaixo, carregando um arquivo e executando a requisição. O arquivo será copiado para a pasta upload na raiz do projeto, onde ficam os arquivos a serem processados pelo wrapper na chamada do Java.
+
+![Descrição Postman](https://uploaddeimagens.com.br/images/001/657/139/full/postman.png?1538867467)

@@ -4,11 +4,11 @@ import * as redirect from "../redirect";
 export let insertProduct = (req: Request, res: Response) => {
   const obj = {
     operation: "PRODUTO",
-    path: "src/service/csvFiles/produtos.csv",
+    path: "upload/*.csv",
     type: "CARGA",
     crud: "INSERT",
     period: 0,
-    pathSave: "src/service/csvFiles/saida.csv"
+    pathSave: "src/service/csvFiles/download/saida.csv"
   }
 
   const chamada = redirect.Redirect(obj)
