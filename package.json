@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "watch-ts": "tsc -w",
+    "mongo": "sudo service mongod start",
     "watch-node": "nodemon dist/app.js",
     "nodemon-debug": "nodemon --inspect dist/app.js",
     "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript, Node\" -c \"yello.bold, cyan.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
@@ -37,6 +38,9 @@
   },
   "dependencies": {
     "body-parser": "1.18.3",
+    "csv-parser": "^2.0.0",
+    "csvtojson": "^2.0.8",
+    "del": "^3.0.0",
     "express": "4.16.3",
     "mongodb": "2.2.16",
     "mongoose": "^5.2.15",
