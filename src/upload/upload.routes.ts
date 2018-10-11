@@ -10,11 +10,11 @@
 export let getCsv = function(req, res) {
 
   if (req.files) {
-    var file = req.files.filename,
-        filename = file.name;
+    var file = req.files.file;
+    var filename = file.name;
+
     file.mv("./upload/"+filename, function(err) {
       if (err) {
-        console.log("Erro:", err);
         res.send("Error", err);
         res.status(400);
       } else {
