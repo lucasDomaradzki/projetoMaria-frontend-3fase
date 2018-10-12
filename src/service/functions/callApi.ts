@@ -1,3 +1,4 @@
+import { Logger } from "../../common/logger";
 let child = require('child_process');
 
 export class CallApi {
@@ -7,7 +8,7 @@ export class CallApi {
             child.exec(operation,
                 (error, success) => {
                     if (error != null) {
-                        console.error(error)
+                        Logger.add(Logger.error(`WRAPPER: Erro ao chamar a classe CallApi: ${error}`));
                         reject(error)
                     }
                     resolve(success)

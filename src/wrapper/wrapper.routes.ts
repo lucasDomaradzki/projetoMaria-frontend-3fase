@@ -1,8 +1,8 @@
 import { WrapperService } from './../service/wrapper.service';
-import { Request, Response } from "express";
-import * as _ from 'lodash'
+import { Request, Response } from 'express';
+import { Logger } from '../common/logger';
 const del = require('del');
-const csv = require('csvtojson')
+const csv = require('csvtojson');
 const wrapperService = new WrapperService()
 
 export let callApiJava = (req: Request, res: Response) => {
@@ -17,7 +17,7 @@ export let callApiJava = (req: Request, res: Response) => {
     .then((resolve) => {
       res.send(resolve)
     }).catch((reject) => {
-      console.log(reject)
+      Logger.add(Logger.error(`WRAPPER: Erro ao acessar a crudApi: ${reject}`));
     })
 }
 
@@ -31,7 +31,7 @@ export let downloadFile = (req: Request, res: Response) => {
         del.sync(['/home/daniel/Documentos/faculdade/web/projetoMaria-frontend-3fase/src/download/data.csv']);
       }, 1000)
     }).catch((reject) => {
-      console.log(reject)
+      Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço downloadFile: ${reject}`));
     })
 }
 
@@ -50,7 +50,7 @@ export let loaderFile = (req: Request, res: Response) => {
           }, 1000)
         })
     }).catch((reject) => {
-      console.error(reject)
+      Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço loaderFile: ${reject}`));
     })
 }
 
@@ -63,7 +63,7 @@ export let deleteInfo = (req: Request, res: Response) => {
     .then((resolve) => {
       res.send(resolve)
     }).catch((reject) => {
-      console.error(reject)
+      Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço deleteInfo: ${reject}`));
     })
 }
 
@@ -76,7 +76,7 @@ export let updateInfo = (req: Request, res: Response) => {
     .then((resolve) => {
       res.send(resolve)
     }).catch((reject) => {
-      console.error(reject)
+      Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço updateInfo: ${reject}`));
     })
 }
 
@@ -89,6 +89,6 @@ export let insertInfo = (req: Request, res: Response) => {
     .then((resolve) => {
       res.send(resolve)
     }).catch((reject) => {
-      console.error(reject)
+      Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`));
     })
 }

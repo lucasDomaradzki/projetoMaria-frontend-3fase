@@ -11,9 +11,3 @@ export const MESSAGES = {
   "10": "Registros não cadastrados no banco de dados.",
   "1": "Coluna incorreta"
 }
-
-export const UTIL = {
-  "pathApiJava": "maria/projeto-maria-0.0.1-SNAPSHOT.jar ",
-  "pathSave": "./download/*.csv",
-  "pathCrud": "./upload/*.csv"
-}

@@ -1,14 +1,6 @@
 import * as mongoose from 'mongoose';
 import { environment } from "../common/environment";
 
-mongoose.connect(environment.db.url, { useNewUrlParser: true }, (err: any) => {
-  if (err) {
-    console.log(err.message);
-  } else {
-    console.log("Conectado ao MongoDB com susesso.")
-  }
-})
-
 // Use this to debug mongoose
 mongoose.set("debug", true);
 
