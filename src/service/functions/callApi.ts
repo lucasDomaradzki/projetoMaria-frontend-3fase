@@ -2,14 +2,12 @@ let child = require('child_process');
 
 export class CallApi {
 
-    constructor() { }
-
-    call(operation) {
+    wrapper(operation) {
         return new Promise((resolve, reject) => {
             child.exec(operation,
                 (error, success) => {
                     if (error != null) {
-                        console.log(error)
+                        console.error(error)
                         reject(error)
                     }
                     resolve(success)

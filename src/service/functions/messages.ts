@@ -13,5 +13,7 @@ export const MESSAGES = {
 }
 
 export const UTIL = {
-  "path": "maria/projeto-maria-0.0.1-SNAPSHOT.jar "
+  "pathApiJava": "maria/projeto-maria-0.0.1-SNAPSHOT.jar ",
+  "pathSave": "src/download/data.csv",
+  "pathCrud": "src/upload/data.csv"
 }
