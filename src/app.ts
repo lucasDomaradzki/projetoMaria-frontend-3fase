@@ -4,7 +4,7 @@ import * as bodyParser from 'body-parser';
 import * as users from "./users/users.routes";
 import * as wrapper from "./wrapper/wrapper.routes";
 // import * as upload from "express-fileupload";
-import * as fileUploader from "../upload/upload.routes";
+import * as fileUploader from "./upload/upload.routes";
 
 const app = express();
 app.set("port", environment.server);
