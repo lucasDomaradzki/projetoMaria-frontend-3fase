@@ -1,12 +1,13 @@
+import { RoutesWrapper } from './wrapper/routesWrapper';
 import * as express from 'express';
 import * as mongoose from 'mongoose';
 import { environment } from './common/environment';
 import * as bodyParser from 'body-parser';
 import * as users from './users/users.routes';
-import * as wrapper from './wrapper/wrapper.routes';
 import * as upload from "express-fileupload";
-import * as fileUploader from './frontendService/upload.routes';
 import { Logger } from './common/logger';
+
+const routesWrapper = new RoutesWrapper()
 
 const app = express();
 app.set('port', environment.server);
@@ -34,17 +35,16 @@ app.get('/users', users.getAllUsers);
 app.post('/users', users.addUser);
 app.put('/users/:id', users.updateUser);
 app.delete('/users/:id', users.removeUser);
-app.post('/api/upload', fileUploader.getCsv);
 
 //download e load dos relatorios
-app.get('/api/download/:operation', wrapper.downloadFile)
-app.get('/api/data/:operation', wrapper.loaderFile)
-app.get('/api/download/estimativa:period', wrapper.downloadFile);
+app.get('/api/download/:operation', routesWrapper.downloadFile)
+app.get('/api/data/:operation', routesWrapper.loaderFile)
+app.get('/api/download/estimativa:period', routesWrapper.downloadFile);
 
 //crud
-app.get('/api/insert/:operation', wrapper.insertInfo);
-app.get('/api/delete/:operation', wrapper.deleteInfo);
-app.get('/api/update/:operation', wrapper.updateInfo);
+app.post('/api/insert/:operation', routesWrapper.insertInfo);
+app.post('/api/delete/:operation', routesWrapper.deleteInfo);
+app.post('/api/update/:operation', routesWrapper.updateInfo);
 
 mongoose.connect(environment.db.url, { useNewUrlParser: true }, (err: any) => {
   if (err) {

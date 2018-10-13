@@ -5,7 +5,7 @@
 const proxy = [
     {
       context: '/',
-      target: 'http://localhost:5050',
+      target: 'http://localhost:3000',
       pathRewrite: { '^/': '' }
     }
 ];
