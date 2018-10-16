@@ -1,4 +1,5 @@
 import * as log from "winston";
+import * as moment from "moment";
 import { createLogger } from "winston";
 import { MARIA_UTIL } from "../common/util";
 
@@ -10,7 +11,7 @@ export const logTypes = {
   }
 };
 
-const filename = new Date().getDay() + "-" + new Date().getMonth() + "-" + new Date().getFullYear();
+const filename = moment().format("DD-MM-YYYY-HH:mm:ss");
 
 export const Logger = createLogger({
   levels: logTypes.levels,
