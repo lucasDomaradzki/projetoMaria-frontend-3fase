@@ -5,7 +5,6 @@ import { environment } from './common/environment';
 import * as bodyParser from 'body-parser';
 import * as users from './users/users.routes';
 import * as upload from "express-fileupload";
-import { Logger } from './common/logger';
 
 const routesWrapper = new RoutesWrapper()
 
@@ -48,7 +47,7 @@ app.post('/api/update/:operation', routesWrapper.updateInfo);
 
 mongoose.connect(environment.db.url, { useNewUrlParser: true }, (err: any) => {
   if (err) {
-    Logger.add(Logger.error(`CONEXÃO: Erro: -- ${err.message} -- ao conectar ao mongoose.`));
+    console.error(`CONEXÃO: Erro: -- ${err.message} -- ao conectar ao mongoose.`);
   } else {
     console.log("Conectado ao Banco de Dados com sucesso.")
   }
