@@ -1,7 +1,6 @@
 import { WrapperService } from './../service/wrapper.service';
 import { FilesService } from '../service/files.service';
 import { Request, Response } from 'express';
-import { Logger } from '../common/logger';
 
 const csv = require('csvtojson');
 import moment = require("moment");
@@ -37,7 +36,7 @@ export class RoutesWrapper {
             res.send(jsonObj);
           })
       }).catch((reject) => {
-        Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço loaderFile: ${reject}`));
+        console.error(`WRAPPER: Erro ao chamar o serviço loaderFile: ${reject}`);
       })
   }
 
@@ -53,10 +52,10 @@ export class RoutesWrapper {
           .then((resolve) => {
             res.send(resolve);
           }).catch((reject) => {
-            Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`));
+            console.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`);
           })
       }).catch((reject) => {
-        Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`));
+        console.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`);
       })
   }
 
@@ -72,10 +71,10 @@ export class RoutesWrapper {
           .then((resolve) => {
             res.send(resolve);
           }).catch((reject) => {
-            Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`));
+            console.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`);
           })
       }).catch((reject) => {
-        Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`));
+        console.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`);
       })
   }
 
@@ -91,11 +90,11 @@ export class RoutesWrapper {
           .then((resolve) => {
             res.send(resolve);
           }).catch((reject) => {
-            res.send(reject)
-            Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`));
+            res.send(reject);
+            console.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`);
           })
       }).catch((reject) => {
-        Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`));
+        console.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`);
       })
   }
 }
