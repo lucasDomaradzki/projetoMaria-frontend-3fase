@@ -18,9 +18,10 @@ export class RoutesWrapper {
 
     const result = this.wrapperService.relatory(operation)
       .then((resolve) => {
-        res.download(`./download/${operation.fileName}`)
+        res.status(200).download(`./download/${operation.fileName}`);
       }).catch((reject) => {
-        res.send(reject);
+        Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço downloadFile: ${reject}`));
+        res.status(400).send(reject);
       })
     return result;
   }
@@ -34,10 +35,11 @@ export class RoutesWrapper {
         csv()
           .fromFile(`./download/${operation.fileName}`)
           .then((jsonObj) => {
-            res.send(jsonObj);
+            res.status(200).send(jsonObj);
           })
       }).catch((reject) => {
         Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço loaderFile: ${reject}`));
+        res.status(400).send(reject);
       })
   }
 
@@ -51,12 +53,13 @@ export class RoutesWrapper {
         operation.fileName = resolve;
         this.wrapperService.carga(operation)
           .then((resolve) => {
-            res.send(resolve);
+            res.status(200).send(resolve);
           }).catch((reject) => {
             Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`));
           })
       }).catch((reject) => {
         Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`));
+        res.status(400).send(reject);
       })
   }
 
@@ -70,12 +73,13 @@ export class RoutesWrapper {
         operation.fileName = resolve;
         this.wrapperService.carga(operation)
           .then((resolve) => {
-            res.send(resolve);
+            res.status(200).send(resolve);
           }).catch((reject) => {
             Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`));
           })
       }).catch((reject) => {
         Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`));
+        res.status(400).send(reject);
       })
   }
 
@@ -89,13 +93,14 @@ export class RoutesWrapper {
         operation.fileName = resolve;
         this.wrapperService.carga(operation)
           .then((resolve) => {
-            res.send(resolve);
+            res.status(200).send(resolve);
           }).catch((reject) => {
             res.send(reject)
             Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`));
           })
       }).catch((reject) => {
         Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`));
+        res.status(400).send(reject);
       })
   }
 }

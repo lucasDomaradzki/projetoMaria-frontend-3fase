@@ -11,7 +11,7 @@ export const logTypes = {
   }
 };
 
-const filename = moment().format("DD-MM-YYYY-HH:mm:ss");
+const filename = moment().format("DD-MM-YYYY");
 
 export const Logger = createLogger({
   levels: logTypes.levels,

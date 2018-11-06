@@ -6,7 +6,6 @@ export class FilesService {
     constructor() { }
 
     uploadCsv = (sendFile) => {
-        console.log(sendFile)
         const now = moment().format("DD-MM-YYYY-HH:mm:ss");
         const uploadFile = new Promise((resolve, reject) => {
 
