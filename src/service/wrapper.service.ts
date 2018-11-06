@@ -1,4 +1,3 @@
-import { Logger } from './../common/logger';
 import { MARIA_UTIL } from './../common/util';
 let child = require('child_process');
 
@@ -30,7 +29,7 @@ export class WrapperService {
             child.exec(operation,
                 (error, success) => {
                     if (error != null) {
-                        Logger.add(Logger.error(`WRAPPER: Erro ao chamar a classe CallApi: ${error}`));
+                        console.error(`WRAPPER: Erro ao chamar a classe CallApi: ${error}`);
                         reject(error)
                     }
                     resolve(success)

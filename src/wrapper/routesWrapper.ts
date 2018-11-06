@@ -1,7 +1,6 @@
 import { WrapperService } from './../service/wrapper.service';
 import { FilesService } from '../service/files.service';
 import { Request, Response } from 'express';
-import { Logger } from '../common/logger';
 
 const csv = require('csvtojson');
 import moment = require("moment");
@@ -20,7 +19,7 @@ export class RoutesWrapper {
       .then((resolve) => {
         res.status(200).download(`./download/${operation.fileName}`);
       }).catch((reject) => {
-        Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço downloadFile: ${reject}`));
+        console.error(`WRAPPER: Erro ao chamar o serviço downloadFile: ${reject}`);
         res.status(400).send(reject);
       })
     return result;
@@ -38,8 +37,7 @@ export class RoutesWrapper {
             res.status(200).send(jsonObj);
           })
       }).catch((reject) => {
-        Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço loaderFile: ${reject}`));
-        res.status(400).send(reject);
+        console.error(`WRAPPER: Erro ao chamar o serviço loaderFile: ${reject}`);
       })
   }
 
@@ -55,11 +53,11 @@ export class RoutesWrapper {
           .then((resolve) => {
             res.status(200).send(resolve);
           }).catch((reject) => {
-            Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`));
+            console.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`);
           })
       }).catch((reject) => {
-        Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`));
         res.status(400).send(reject);
+        console.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`);
       })
   }
 
@@ -75,11 +73,11 @@ export class RoutesWrapper {
           .then((resolve) => {
             res.status(200).send(resolve);
           }).catch((reject) => {
-            Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`));
+            console.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`);
           })
       }).catch((reject) => {
-        Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`));
         res.status(400).send(reject);
+        console.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`);
       })
   }
 
@@ -95,12 +93,12 @@ export class RoutesWrapper {
           .then((resolve) => {
             res.status(200).send(resolve);
           }).catch((reject) => {
-            res.send(reject)
-            Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`));
+            res.send(reject);
+            console.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`);
           })
       }).catch((reject) => {
-        Logger.add(Logger.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`));
         res.status(400).send(reject);
+        console.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`);
       })
   }
 }

@@ -1,4 +1,3 @@
-import { Logger } from './../common/logger';
 import moment = require("moment");
 
 export class FilesService {
@@ -15,17 +14,17 @@ export class FilesService {
                 const newfileName = `${now}.csv`;
 
                 file.mv("./upload/" + newfileName, (err) => {
-                    if (err) {
-                        Logger.add(Logger.error(`FRONTEND-SERVICE: Falha ao receber o upload do arquivo.`));
+                    if (err) {~
+                        console.error(`FRONTEND-SERVICE: Falha ao receber o upload do arquivo.`);
                         reject(`Erro ao carregar o arquivo ${originalName}.`)
 
                     } else {
-                        Logger.add(Logger.error(`FRONTEND-SERVICE: Arquivo ${newfileName} carregado com sucesso.`));
+                        console.error(`FRONTEND-SERVICE: Arquivo ${newfileName} carregado com sucesso.`);
                         resolve(newfileName)
                     }
                 });
             } else {
-                Logger.add(Logger.error(`FRONTEND-SERVICE: Arquivo não compatível.`));
+                console.error(`FRONTEND-SERVICE: Arquivo não compatível.`);
                 reject("Arquivo enviado não compatível. Envie arquivos .csv");
             }
         })
