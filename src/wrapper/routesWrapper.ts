@@ -25,66 +25,22 @@ export class RoutesWrapper {
     return result;
   }
 
-  loaderFile = (req: Request, res: Response) => {
+  loaderFileJSON = (req: Request, res: Response) => {
     const operation = req.params;
-    operation.fileName = `${moment().format("DD-MM-YYYY-HH:mm:ss")}.csv`;
-
-    return this.wrapperService.relatory(operation)
+    operation.json = true;
+    const result = this.wrapperService.relatory(operation)
       .then((resolve) => {
-        csv()
-          .fromFile(`./download/${operation.fileName}`)
-          .then((jsonObj) => {
-            res.status(200).send(jsonObj);
-          })
+        res.status(200).send(resolve);
       }).catch((reject) => {
-        console.error(`WRAPPER: Erro ao chamar o serviço loaderFile: ${reject}`);
-      })
-  }
-
-  deleteInfo = (req: Request, res: Response) => {
-    const operation: any = {}
-    operation.operation = req.params.operation;
-    operation.type = "delete"
-
-    this.filesService.uploadCsv(req)
-      .then((resolve) => {
-        operation.fileName = resolve;
-        this.wrapperService.carga(operation)
-          .then((resolve) => {
-            res.status(200).send(resolve);
-          }).catch((reject) => {
-            console.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`);
-          })
-      }).catch((reject) => {
+        console.error(`WRAPPER: Erro ao chamar o serviço JSON: ${reject}`);
         res.status(400).send(reject);
-        console.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`);
       })
+    return result;
   }
-
-  updateInfo = (req: Request, res: Response) => {
+  
+  upsertInfo = (req: Request, res: Response) => {
     const operation: any = {};
     operation.operation = req.params.operation;
-    operation.type = "update";
-
-    this.filesService.uploadCsv(req)
-      .then((resolve) => {
-        operation.fileName = resolve;
-        this.wrapperService.carga(operation)
-          .then((resolve) => {
-            res.status(200).send(resolve);
-          }).catch((reject) => {
-            console.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`);
-          })
-      }).catch((reject) => {
-        res.status(400).send(reject);
-        console.error(`WRAPPER: Erro ao chamar o serviço insertInfo: ${reject}`);
-      })
-  }
-
-  insertInfo = (req: Request, res: Response) => {
-    const operation: any = {};
-    operation.operation = req.params.operation;
-    operation.type = "insert";
 
     this.filesService.uploadCsv(req)
       .then((resolve) => {

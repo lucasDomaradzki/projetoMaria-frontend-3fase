@@ -6,8 +6,7 @@ export class WrapperService {
     constructor() { }
 
     async carga(params) {
-        console.log(params)
-        this.operation = `java -jar ${MARIA_UTIL.pathApiJava} carga -${params.type.substr(0, 1).toLowerCase()} -t ${params.operation.toUpperCase()} ./upload/${params.fileName}`;
+        this.operation = `java -jar ${MARIA_UTIL.pathApiJava} carga -t ${params.operation.toUpperCase()} ./upload/${params.fileName}`;
 
         const resultCall = await this.wrapper(this.operation);
         return resultCall;
@@ -15,10 +14,11 @@ export class WrapperService {
 
     async relatory(params) {
         if (params.operation == "ESTATISTICA") {
-            this.operation = `java -jar ${MARIA_UTIL.pathApiJava} relatorio -pa ${params.period} -t ${params.operation.toUpperCase()} ./download/${params.fileName}`;
+            this.operation = `java -jar ${MARIA_UTIL.pathApiJava} relatorio -pa ${params.json ? '-j' : ''} ${params.period} -t ${params.operation.toUpperCase()} ./download/${params.fileName ? params.fileName : params.operation}`;
         } else {
-            this.operation = `java -jar ${MARIA_UTIL.pathApiJava} relatorio -t ${params.operation.toUpperCase()} ./download/${params.fileName}`;
+            this.operation = `java -jar ${MARIA_UTIL.pathApiJava} relatorio -t ${params.json ? '-j' : ''} ${params.operation.toUpperCase()} ./download/${params.fileName ? params.fileName : params.operation}`;
         }
+        console.log(this.operation)
 
         const resultCall = await this.wrapper(this.operation);
         return resultCall;

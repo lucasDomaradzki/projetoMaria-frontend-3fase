@@ -37,13 +37,11 @@ app.delete('/users/:id', users.removeUser);
 
 //download e load dos relatorios
 app.get('/api/download/:operation', routesWrapper.downloadFile)
-app.get('/api/data/:operation', routesWrapper.loaderFile)
+app.get('/api/data/:operation', routesWrapper.loaderFileJSON)
 app.get('/api/download/estimativa:period', routesWrapper.downloadFile);
 
 //crud
-app.post('/api/insert/:operation', routesWrapper.insertInfo);
-app.post('/api/delete/:operation', routesWrapper.deleteInfo);
-app.post('/api/update/:operation', routesWrapper.updateInfo);
+app.post('/api/upsert/:operation', routesWrapper.upsertInfo);
 
 mongoose.connect(environment.db.url, { useNewUrlParser: true }, (err: any) => {
   if (err) {
