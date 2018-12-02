@@ -14,7 +14,7 @@ export class FilesService {
                 const newfileName = `${now}.csv`;
 
                 file.mv("./upload/" + newfileName, (err) => {
-                    if (err) {~
+                    if (err) {
                         console.error(`FRONTEND-SERVICE: Falha ao receber o upload do arquivo.`);
                         reject(`Erro ao carregar o arquivo ${originalName}.`)
 

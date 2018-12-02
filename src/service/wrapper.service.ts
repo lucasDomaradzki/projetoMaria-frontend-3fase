@@ -14,17 +14,29 @@ export class WrapperService {
 
     async relatory(params) {
         if (params.operation == "ESTATISTICA") {
-            this.operation = `java -jar ${MARIA_UTIL.pathApiJava} relatorio -pa ${params.json ? '-j' : ''} ${params.period} -t ${params.operation.toUpperCase()} ./download/${params.fileName ? params.fileName : params.operation}`;
+            this.operation = `java -jar ${MARIA_UTIL.pathApiJava} relatorio -pa ${params.period} -t ${params.operation.toUpperCase()} ./download/${params.fileName}`;
         } else {
-            this.operation = `java -jar ${MARIA_UTIL.pathApiJava} relatorio -t ${params.json ? '-j' : ''} ${params.operation.toUpperCase()} ./download/${params.fileName ? params.fileName : params.operation}`;
+            this.operation = `java -jar ${MARIA_UTIL.pathApiJava} relatorio -t ${params.operation.toUpperCase()} ./download/${params.fileName}`;
         }
         console.log(this.operation)
 
-        const resultCall = await this.wrapper(this.operation);
+        const resultCall = await this.wrapper(this.operation, 'download');
         return resultCall;
     }
 
-    wrapper(operation) {
+    async JsonData(params) {
+        if (params.operation == "ESTATISTICA") {
+            this.operation = `java -jar ${MARIA_UTIL.pathApiJava} relatorio -pa  ${params.period} -t ${params.operation.toUpperCase()} -j`;
+        } else {
+            this.operation = `java -jar ${MARIA_UTIL.pathApiJava} relatorio -t ${params.operation.toUpperCase()} -j`;
+        }
+        console.log(this.operation)
+
+        const resultCall = await this.wrapper(this.operation, 'json');
+        return resultCall;
+    }
+
+    wrapper(operation, type?) {
         return new Promise((resolve, reject) => {
             child.exec(operation,
                 (error, success) => {
@@ -32,7 +44,12 @@ export class WrapperService {
                         console.error(`WRAPPER: Erro ao chamar a classe CallApi: ${error}`);
                         reject(error)
                     }
-                    resolve(success)
+                    if (type == 'json') {
+                        let result = '{"Status' + success.split('{"Status')[1]
+                        resolve(result)
+                    } else {
+                        resolve(success);
+                    }
                 })
         })
     }

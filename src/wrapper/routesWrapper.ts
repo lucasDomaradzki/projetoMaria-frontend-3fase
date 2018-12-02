@@ -28,7 +28,7 @@ export class RoutesWrapper {
   loaderFileJSON = (req: Request, res: Response) => {
     const operation = req.params;
     operation.json = true;
-    const result = this.wrapperService.relatory(operation)
+    const result = this.wrapperService.JsonData(operation)
       .then((resolve) => {
         res.status(200).send(resolve);
       }).catch((reject) => {
