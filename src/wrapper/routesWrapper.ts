@@ -1,8 +1,6 @@
 import { WrapperService } from './../service/wrapper.service';
 import { FilesService } from '../service/files.service';
 import { Request, Response } from 'express';
-
-const csv = require('csvtojson');
 import moment = require("moment");
 
 export class RoutesWrapper {

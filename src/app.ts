@@ -13,7 +13,7 @@ app.set('port', environment.server);
 app.use(bodyParser.json());
 app.use(upload());
 // Allow cors
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
@@ -35,12 +35,10 @@ app.post('/users', users.addUser);
 app.put('/users/:id', users.updateUser);
 app.delete('/users/:id', users.removeUser);
 
-//download e load dos relatorios
+//dowload, load e upsert
 app.get('/api/download/:operation', routesWrapper.downloadFile)
 app.get('/api/data/:operation', routesWrapper.loaderFileJSON)
 app.get('/api/download/estimativa:period', routesWrapper.downloadFile);
-
-//crud
 app.post('/api/upsert/:operation', routesWrapper.upsertInfo);
 
 mongoose.connect(environment.db.url, { useNewUrlParser: true }, (err: any) => {
@@ -51,6 +49,6 @@ mongoose.connect(environment.db.url, { useNewUrlParser: true }, (err: any) => {
   }
 })
 
-const server = app.listen(environment.server.port, function() {
+app.listen(environment.server.port, () => {
   console.log('Servidor rodando na porta: ', environment.server.port);
 });
